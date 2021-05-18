@@ -1,0 +1,21 @@
+word_list = [
+    "aglet",
+    "fire",
+    "chaos",
+    "net",
+    "throne",
+    "chance",
+    "age",
+    "thief",
+    "spades",
+    "view",
+    "faculty",
+    "college",
+    "choice",
+    "opinion",
+    "character"
+    "town",
+    "pavement",
+    "armadillo",
+    "harbour",
+    "terminal"]
