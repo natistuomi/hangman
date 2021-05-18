@@ -9,7 +9,7 @@ def play(word):
     word_completion = "_" * len(word)
     guessed = False
     guessed_letters = []
-    tries = 6
+    tries = 10
     print("Let's play hangman!")
     print(word_completion)
     print("\n")
@@ -27,3 +27,26 @@ def play(word):
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
+                for index in indices:
+                    word_as_list[index] = guess
+                word_completion = "".join(word_as_list)
+                if "_" not in word_completion:
+                    guessed = True
+        else:
+            print("Unvalid guess")
+        print(word_completion)
+        print("\n")
+    if guessed:
+        print("Congratulations! You guessed the word and won the game")
+    else:
+        print(f"You ran out of tries. The word was {word}")
+
+def main():
+    word = get_word()
+    play(word)
+    while input("Play again? (Y/N) ").upper() == "Y":
+        word = get_word()
+        play(word)
+
+if __name__ == "__main__":
+    main()
