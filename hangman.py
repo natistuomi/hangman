@@ -12,7 +12,6 @@ def play(word):
     tries = 10
     print("Let's play hangman!")
     print(word_completion)
-    print("\n")
     while not guessed and tries > 0:
         guess = input("Guess a letter: ").upper()
         if len(guess) == 1 and guess.isalpha():
@@ -35,9 +34,8 @@ def play(word):
         else:
             print("Unvalid guess")
         print(word_completion)
-        print("\n")
     if guessed:
-        print("Congratulations! You guessed the word and won the game")
+        print(f"Congratulations! You guessed the word and won the game with {tries} tries left")
     else:
         print(f"You ran out of tries. The word was {word}")
 
