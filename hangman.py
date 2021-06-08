@@ -17,12 +17,15 @@ def play(word):
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
                 print("You have already guessed", guess)
+                print(f"{tries} fails left")
             elif guess not in word:
                 print(guess, "is not in the word")
                 tries -= 1
+                print(f"{tries} fail(s) left")
                 guessed_letters.append(guess)
             else:
                 print("Great,", guess, "is in the word!")
+                print(f"{tries} fail(s) left")
                 guessed_letters.append(guess)
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == guess]
@@ -33,9 +36,10 @@ def play(word):
                     guessed = True
         else:
             print("Unvalid guess")
+            print(f"{tries} fail(s) left")
         print(word_completion)
     if guessed:
-        print(f"Congratulations! You guessed the word and won the game with {tries} tries left")
+        print(f"Congratulations! You guessed the word and won the game with {tries} fail(s) left")
     else:
         print(f"You ran out of tries. The word was {word}")
 
